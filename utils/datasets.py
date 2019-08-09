@@ -113,8 +113,10 @@ class ListDataset(Dataset):
             # Adjust for added padding
             x1 += pad[0]
             y1 += pad[2]
-            x2 += pad[1]
-            y2 += pad[3]
+            #x2 += pad[1]
+            #y2 += pad[3]
+            x2 += pad[0]
+            y2 += pad[2]
             # Returns (x, y, w, h)
             boxes[:, 1] = ((x1 + x2) / 2) / padded_w
             boxes[:, 2] = ((y1 + y2) / 2) / padded_h
